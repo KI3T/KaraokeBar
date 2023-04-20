@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{78AA6C0F-F0C4-4294-AAE9-E2B8320A8430}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>KaraokeBar</RootNamespace>
+    <AssemblyName>KaraokeBar</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b" />
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+      <HintPath>..\..\..\..\PhanMem\Visual Studio\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
+      <HintPath>..\..\..\..\PhanMem\Visual Studio\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>..\..\..\..\PhanMem\Visual Studio\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
+      <HintPath>..\..\..\..\PhanMem\Visual Studio\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
+      <HintPath>..\..\..\..\PhanMem\Visual Studio\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextBox">
+      <HintPath>..\..\..\..\PhanMem\Visual Studio\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToolTip">
+      <HintPath>..\..\..\..\PhanMem\Visual Studio\Bunifu UI WinForms 5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v21.2.Win, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v21.2.UI, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Diagram.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Map.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.TreeMap.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v21.2.UI, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v21.2.UI, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v21.2.Wizard, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraDiagram.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v21.2.Presets, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v21.2.Win, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraMap.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeMap.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeMap.v21.2.UI, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="MainView\formAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainView\formAdmin.Designer.cs">
+      <DependentUpon>formAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainView\formBoss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainView\formBoss.Designer.cs">
+      <DependentUpon>formBoss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainView\formLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainView\formLogin.Designer.cs">
+      <DependentUpon>formLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainView\formStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainView\formStaff.Designer.cs">
+      <DependentUpon>formStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainView\formWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainView\formWait.Designer.cs">
+      <DependentUpon>formWait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SecondView\formAccountManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecondView\formAccountManage.Designer.cs">
+      <DependentUpon>formAccountManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecondView\formBookingRoomManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecondView\formBookingRoomManager.Designer.cs">
+      <DependentUpon>formBookingRoomManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecondView\formCustomerManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecondView\formCustomerManage.Designer.cs">
+      <DependentUpon>formCustomerManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecondView\formDetailReceiptManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecondView\formDetailReceiptManager.Designer.cs">
+      <DependentUpon>formDetailReceiptManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecondView\formReceiptManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecondView\formReceiptManager.Designer.cs">
+      <DependentUpon>formReceiptManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecondView\formRevenueStatistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecondView\formRevenueStatistic.Designer.cs">
+      <DependentUpon>formRevenueStatistic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecondView\formRoomManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecondView\formRoomManager.Designer.cs">
+      <DependentUpon>formRoomManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecondView\formRoomTypeManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecondView\formRoomTypeManage.Designer.cs">
+      <DependentUpon>formRoomTypeManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecondView\formServiceCateManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecondView\formServiceCateManager.Designer.cs">
+      <DependentUpon>formServiceCateManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecondView\formServiceManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecondView\formServiceManager.Designer.cs">
+      <DependentUpon>formServiceManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecondView\formStaffManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecondView\formStaffManage.Designer.cs">
+      <DependentUpon>formStaffManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubView\formAccountProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubView\formAccountProfile.Designer.cs">
+      <DependentUpon>formAccountProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubView\formChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubView\formChangePassword.Designer.cs">
+      <DependentUpon>formChangePassword.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainView\formAdmin.resx">
+      <DependentUpon>formAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainView\formBoss.resx">
+      <DependentUpon>formBoss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainView\formLogin.resx">
+      <DependentUpon>formLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainView\formStaff.resx">
+      <DependentUpon>formStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainView\formWait.resx">
+      <DependentUpon>formWait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecondView\formAccountManage.resx">
+      <DependentUpon>formAccountManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecondView\formBookingRoomManager.resx">
+      <DependentUpon>formBookingRoomManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecondView\formCustomerManage.resx">
+      <DependentUpon>formCustomerManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecondView\formDetailReceiptManager.resx">
+      <DependentUpon>formDetailReceiptManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecondView\formReceiptManager.resx">
+      <DependentUpon>formReceiptManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecondView\formRevenueStatistic.resx">
+      <DependentUpon>formRevenueStatistic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecondView\formRoomManager.resx">
+      <DependentUpon>formRoomManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecondView\formRoomTypeManage.resx">
+      <DependentUpon>formRoomTypeManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecondView\formServiceCateManager.resx">
+      <DependentUpon>formServiceCateManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecondView\formServiceManager.resx">
+      <DependentUpon>formServiceManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecondView\formStaffManage.resx">
+      <DependentUpon>formStaffManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubView\formAccountProfile.resx">
+      <DependentUpon>formAccountProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubView\formChangePassword.resx">
+      <DependentUpon>formChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DTO\" />
+    <Folder Include="UserControl\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MoveRoom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\splitReceipt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Payment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\booking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\detailReceipt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roomtype.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\servicecate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\receipt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginbutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lockclose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lockopen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logotext.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roomkaraokeicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\serviceicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\servIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roomIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\receiptIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\servicecateIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookingIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accountIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\staffIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoApp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roomtypeIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customerIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\statisticIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\statistic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\informationIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\informationIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
