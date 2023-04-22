@@ -89,20 +89,20 @@ namespace KaraokeBar
             string accountUserName = textBoxUsername.Text;
             string accountPassword = textBoxPassword.Text;
 
-            Thread thread = new Thread(() =>
-            {
-                // Hiển thị formWait
-                formWait fWait = new formWait();
-                fWait.ShowDialog();
-            });
+            //Thread thread = new Thread(() =>
+            //{
+            //    // Hiển thị formWait
+            //    formWait fWait = new formWait();
+            //    fWait.ShowDialog();
+            //});
 
-            thread.Start(); // Bắt đầu chạy thread mới
-            Thread.Sleep(500); // Chờ 0.1 giây trước khi tiếp tục thực hiện đoạn code phía dưới
+            //thread.Start(); // Bắt đầu chạy thread mới
+            //Thread.Sleep(500); // Chờ 0.1 giây trước khi tiếp tục thực hiện đoạn code phía dưới
 
             if (Login(accountUserName, accountPassword))
             {
                 // Đóng formWait nếu đã đăng nhập thành công
-                thread.Abort();
+                //thread.Abort();
                 string accountPermission = AccountDAO.Instance.GetAccountPermission(accountUserName);
                 switch (accountPermission.ToLower())
                 {
@@ -129,7 +129,7 @@ namespace KaraokeBar
             else
             {
                 // Đóng formWait nếu đăng nhập không thành công
-                thread.Abort();
+                //thread.Abort();
                 MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!");
             }
         }

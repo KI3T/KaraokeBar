@@ -70,6 +70,7 @@ namespace KaraokeBar
             this.flowLayoutPanelRoomService = new System.Windows.Forms.FlowLayoutPanel();
             this.panelReceipt = new System.Windows.Forms.Panel();
             this.listViewReceipt = new System.Windows.Forms.ListView();
+            this.labelRoomName = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             this.panelTime.SuspendLayout();
             this.panelFormStaff.SuspendLayout();
@@ -905,6 +906,7 @@ namespace KaraokeBar
             // 
             this.panelOption.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelOption.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelOption.Controls.Add(this.labelRoomName);
             this.panelOption.Controls.Add(this.comboBoxRoomService);
             this.panelOption.Controls.Add(this.buttonListService);
             this.panelOption.Controls.Add(this.buttonListRoom);
@@ -917,9 +919,9 @@ namespace KaraokeBar
             // 
             this.comboBoxRoomService.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxRoomService.FormattingEnabled = true;
-            this.comboBoxRoomService.Location = new System.Drawing.Point(94, 112);
+            this.comboBoxRoomService.Location = new System.Drawing.Point(165, 112);
             this.comboBoxRoomService.Name = "comboBoxRoomService";
-            this.comboBoxRoomService.Size = new System.Drawing.Size(670, 45);
+            this.comboBoxRoomService.Size = new System.Drawing.Size(658, 45);
             this.comboBoxRoomService.TabIndex = 0;
             // 
             // buttonListService
@@ -1106,6 +1108,7 @@ namespace KaraokeBar
             // 
             this.panelRoomServicePayment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelRoomServicePayment.AutoScroll = true;
             this.panelRoomServicePayment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelRoomServicePayment.Controls.Add(this.flowLayoutPanelRoomService);
             this.panelRoomServicePayment.Location = new System.Drawing.Point(1079, 175);
@@ -1115,7 +1118,9 @@ namespace KaraokeBar
             // 
             // flowLayoutPanelRoomService
             // 
-            this.flowLayoutPanelRoomService.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelRoomService.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanelRoomService.AutoScroll = true;
             this.flowLayoutPanelRoomService.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanelRoomService.Name = "flowLayoutPanelRoomService";
             this.flowLayoutPanelRoomService.Size = new System.Drawing.Size(837, 860);
@@ -1141,6 +1146,16 @@ namespace KaraokeBar
             this.listViewReceipt.Size = new System.Drawing.Size(1068, 755);
             this.listViewReceipt.TabIndex = 0;
             this.listViewReceipt.UseCompatibleStateImageBehavior = false;
+            // 
+            // labelRoomName
+            // 
+            this.labelRoomName.AutoSize = true;
+            this.labelRoomName.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRoomName.Location = new System.Drawing.Point(18, 124);
+            this.labelRoomName.Name = "labelRoomName";
+            this.labelRoomName.Size = new System.Drawing.Size(127, 27);
+            this.labelRoomName.TabIndex = 2;
+            this.labelRoomName.Text = "Phòng ****";
             // 
             // formStaff
             // 
@@ -1169,6 +1184,7 @@ namespace KaraokeBar
             this.panelPayment.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panelOption.ResumeLayout(false);
+            this.panelOption.PerformLayout();
             this.panelRoomServicePayment.ResumeLayout(false);
             this.panelReceipt.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1209,5 +1225,6 @@ namespace KaraokeBar
         private System.Windows.Forms.Label label1;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label labelRoomName;
     }
 }

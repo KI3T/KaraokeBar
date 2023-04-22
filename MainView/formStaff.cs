@@ -1,4 +1,6 @@
-﻿using KaraokeBar.SubView;
+﻿using KaraokeBar.DAO;
+using KaraokeBar.DTO;
+using KaraokeBar.SubView;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +18,8 @@ namespace KaraokeBar
         public formStaff()
         {
             InitializeComponent();
+
+            LoadRoom();
         }
 
         private void formStaff_FormClosing(object sender, FormClosingEventArgs e)
@@ -24,11 +28,6 @@ namespace KaraokeBar
             {
                 e.Cancel = true;
             }
-        }
-
-        private void buttonLogout_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void formStaff_Load(object sender, EventArgs e)
@@ -57,14 +56,62 @@ namespace KaraokeBar
             labelTime.Text = currentTime.ToString("hh:mm:ss tt");
         }
 
+
+        #region Method
+        
+        void LoadRoom()
+        {
+            List<RoomDTO> roomList = RoomDAO.Instance.LoadRoomList();
+
+            foreach (RoomDTO item in roomList)
+            {
+                Button btn = new Button();
+                btn.Size = new System.Drawing.Size(RoomDAO.RoomWidth, RoomDAO.RoomHeight);
+                btn.Anchor = AnchorStyles.Right;
+
+                string statusText = item.RoomStatus == 0 ? "Trống"
+                                    : item.RoomStatus == 1
+                                    ? "Đang sử dụng" : "Đã đặt trước";
+
+                btn.Text = item.RoomName + "\n\n" + statusText;
+
+                int roomStatus = item.RoomStatus;
+                switch (roomStatus)
+                {
+                    case 0:
+                        btn.BackColor = Color.Ivory;
+                        break;
+                    case 1:
+                        btn.BackColor = Color.PaleGreen;
+                        break;
+                    case 2:
+                        btn.BackColor = Color.Bisque;
+                        break;
+                }
+
+
+                flowLayoutPanelRoomService.Controls.Add(btn);
+            }    
+        }
+
+        #endregion
+
+
+        #region Button Events
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void buttonListRoom_Click(object sender, EventArgs e)
         {
-            flowLayoutPanelRoomService.Visible = false;
+            flowLayoutPanelRoomService.Visible = true;
+            LoadRoom();
         }
 
         private void buttonListService_Click(object sender, EventArgs e)
         {
-            flowLayoutPanelRoomService.Visible = false;
+            flowLayoutPanelRoomService.Visible = true;
         }
 
         private void buttonTotal_Click(object sender, EventArgs e)
@@ -74,7 +121,7 @@ namespace KaraokeBar
 
         private void buttonPayment_Click(object sender, EventArgs e)
         {
-            flowLayoutPanelRoomService.Visible = true;
+            flowLayoutPanelRoomService.Visible = false;
         }
 
         private void accInforToolStripMenuItem_Click(object sender, EventArgs e)
@@ -82,5 +129,6 @@ namespace KaraokeBar
             formAccountProfile f = new formAccountProfile();
             f.ShowDialog();
         }
+        #endregion
     }
 }

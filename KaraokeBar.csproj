@@ -117,6 +117,8 @@
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\RoomDAO.cs" />
+    <Compile Include="DTO\RoomDTO.cs" />
     <Compile Include="MainView\formAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -305,7 +307,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DTO\" />
     <Folder Include="UserControl\" />
   </ItemGroup>
   <ItemGroup>
